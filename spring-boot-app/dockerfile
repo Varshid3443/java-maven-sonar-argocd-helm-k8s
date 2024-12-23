@@ -1,0 +1,14 @@
+# Use an official OpenJDK runtime as a parent image
+FROM openjdk:17-jre-alpine
+
+# Set the working directory inside the container
+WORKDIR /app
+
+# Copy the JAR file from the target directory of your project into the container's /app directory
+COPY target/spring-boot-web.jar app.jar
+
+# Expose a different port (for example, 8081)
+EXPOSE 8081
+
+# Specify the command to run the application on port 8081
+ENTRYPOINT ["java", "-jar", "app.jar", "--server.port=8081"]
