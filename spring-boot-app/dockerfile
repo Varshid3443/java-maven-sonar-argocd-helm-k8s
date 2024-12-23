@@ -1,4 +1,4 @@
-FROM openjdk:17-jre-slim
+FROM openjdk:17-jre
 
 # Simply the artifact path
 ARG artifact=target/spring-boot-web.jar
